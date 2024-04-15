@@ -1,6 +1,6 @@
 git init -b main
 git add .
-git remote add origin https://github.com/gitsangramdesai/express-mysql2-without-promise.git
+git remote add origin git@github.com:gitsangramdesai/express-mysql2-without-promise.git
 
 
 git commit -m "code for article"
@@ -8,4 +8,6 @@ git push origin main
 
 
 git config pull.rebase true
-git pull https://github.com/gitsangramdesai/express-mysql2-without-promise.git main
+git pull git@github.com:gitsangramdesai/express-mysql2-without-promise.git main
+
+

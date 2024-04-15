@@ -234,6 +234,6 @@ creating mysql table:
             "success": true
         } 
 
-  My complete project is accessible at github at
+  My complete project is accessible at github at https://github.com/gitsangramdesai/express-mysql2-without-promise
 
   In complete project you will find all CRUD operationa & a search operation too.
