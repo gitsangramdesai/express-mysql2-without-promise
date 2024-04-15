@@ -1,0 +1,4 @@
+https://popsql.com/learn-sql/mysql/how-to-remove-a-default-value-to-a-column-in-mysql
+
+
+
