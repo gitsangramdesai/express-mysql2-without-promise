@@ -7,6 +7,12 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var demoRouter = require('./routes/demo');
+var poolRouter = require('./routes/pool');
+var demoAwaitRouter = require('./routes/demoAwait');
+var poolAwaitRouter = require('./routes/poolAwait');
+var demoPromiseRouter = require('./routes/demoPromise');
+var poolPromiseRouter = require('./routes/poolPromise');
+var sequelizeDemoRouter = require('./routes/sequelizeDemo');
 
 var app = express();
 
@@ -23,6 +29,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/demo', demoRouter);
+app.use('/poc', poolRouter);
+app.use('/demoAwait', demoAwaitRouter);
+app.use('/poolAwait', poolAwaitRouter);
+app.use('/demoPromise', demoPromiseRouter);
+app.use('/poolPromise', poolPromiseRouter);
+app.use('/sequelizeDemo', sequelizeDemoRouter);
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

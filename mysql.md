@@ -27,7 +27,8 @@ creating mysql table:
         ALTER TABLE foodItem add deletedOn datetime DEFAULT NULL;
 
 
-   Now install for generating simple express.js app we will use express generator.
+   Now install for generating simple express.js app we will use express 
+   generator.
 
         npm install -g express-generator
 
@@ -65,12 +66,14 @@ creating mysql table:
         }
         
 
-    Here we we have changed scripts-->start from node ./bin/www to nodemon ./bin/www.
-    Other thing we have updated is version of express.js to latest stable i.e. "express": "~4.19.2"
+    Here we we have changed scripts-->start from node ./bin/www to 
+    nodemon ./bin/www.Other thing we have updated is version of express.js 
+    to latest stable i.e. "express": "~4.19.2"
 
     in our project inside route folder add demo.js.
 
-    To connect to mysql database server we are using mysql2 so we need to install its package
+    To connect to mysql database server we are using mysql2 
+    so we need to install its package
 
         npm install mysql2
 
@@ -131,8 +134,8 @@ creating mysql table:
 
     module.exports = router;
 
-    Though their are multiple routes I am including one just for explanation of working of mysql2.
-    Lets consider following code snippet.
+    Though their are multiple routes I am including one just for 
+    explanation of working of mysql2.Lets consider following code snippet.
 
 
     connection.query(
@@ -172,15 +175,17 @@ creating mysql table:
     Here we want to run query 
         select * from foodItem where isDeleted=0 and id=2
 
-    where this id 2 will come from our rest api call as get param.so weare keeping ? in its place 
-    and its value is taken from array in order of occurances of ? in query which is second param 
-    of connection.query & third param is callback.
+    where this id 2 will come from our rest api call as get param.so weare 
+    keeping ? in its place and its value is taken from array in order of 
+    occurances of ? in query which is second param of connection.query & 
+    third param is callback.
 
-    if we got error in callback we are sending error ,if no error but result array is empty then 
-    sending unable to retreive item else success message with data i.e. an array containing record
-    of mysql query result.
+    if we got error in callback we are sending error ,if no error but result 
+    array is empty then sending unable to retreive item else success message 
+    with data i.e. an array containing record of mysql query result.
 
-    Now we need to mount this router to be accessible so head over to app.js and add
+    Now we need to mount this router to be accessible so head over to app.js 
+    and add
 
     var demoRouter = require('./routes/demo');
 
@@ -188,7 +193,8 @@ creating mysql table:
 
     app.use('/demo', demoRouter);
 
-    So our rest api will be accessible at /demo/getById,its get api expect id from query string.By Default it runs on 3000
+    So our rest api will be accessible at /demo/getById,its get api 
+    expect id from query string.By Default it runs on 3000
     port we can change it.For that we need to install dotenv package.
 
         npm i dotenv
@@ -207,14 +213,19 @@ creating mysql table:
 
     As our table has no records lets add two records into it.
 
-        INSERT INTO foodItem(name,description,price) values('sada dosa','made from rice floor',20);
-        INSERT INTO foodItem(name,description,price) values('masal dosa','made from rice floor & potato',40);
+        INSERT INTO foodItem(name,description,price) 
+        values('sada dosa','made from rice floor',20);
+        
+        INSERT INTO foodItem(name,description,price) 
+        values('masal dosa','made from rice floor & potato',40);
 
     Go to postman app and call our api.
 
-     you will select GET method then in url section add http://localhost:3001/demo/getById?id=1.
+     you will select GET method then in url section 
+     add http://localhost:3001/demo/getById?id=1.
 
-     IN Params add id and its value as 2 and hit sent you should get result as follows.Your result and my result may vary wrt footItem but JSON
+     IN Params add id and its value as 2 and hit sent you should get result 
+     as follows.Your result and my result may vary wrt footItem but JSON
      structure should remain same.
 
         {
@@ -234,6 +245,8 @@ creating mysql table:
             "success": true
         } 
 
-  My complete project is accessible at github at https://github.com/gitsangramdesai/express-mysql2-without-promise
+  My complete project is accessible at github at 
+   https://github.com/gitsangramdesai/express-mysql2-without-promise
 
-  In complete project you will find all CRUD operationa & a search operation too.
+  In complete project you will find all CRUD operationa & a search 
+  operation too.

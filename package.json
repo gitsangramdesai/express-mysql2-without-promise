@@ -13,7 +13,8 @@
     "express": "~4.19.2",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
-    "mysql2": "^3.9.4"
+    "mysql2": "^3.9.4",
+    "sequelize": "^6.37.3"
   },
   "devDependencies": {
     "nodeman": "^1.1.2"
